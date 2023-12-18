@@ -30,6 +30,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "user",
     },
+    isBlocked: {
+      type: Boolean,
+      default: false,
+    },
     cart: {
       type: Array,
       default: [],
@@ -46,6 +50,9 @@ const userSchema = new mongoose.Schema(
         ref: "Product",
       },
     ],
+    refreshToken: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
